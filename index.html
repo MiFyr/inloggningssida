@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skogens Brukshundsklubb</title>
+    <title>Brukshundsklubben</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,12 +16,28 @@
   <body>
     <header>
       <img id="header-img" src="./lake-dog.jpg" alt="Hund tittar ut över sjö" />
-      <h1>Skogens Brukshundsklubb</h1>
+      <h1>Brukshundsklubben</h1>
       <p>Brukshundsklubben för alla snälla vovar.</p>
+      <hr />
     </header>
     <main>
-      <div class="content-card">
+      <div class="content-card login-card">
         <h2>Logga in</h2>
+        <label for="username">Användarnamn:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Användarnamn"
+        />
+        <label for="password">Lösenord:</label>
+        <input
+          type="text"
+          id="password"
+          name="password"
+          placeholder="Lösenord"
+        />
+        <button>Logga in</button>
       </div>
       <div class="content-card img-card">
         <img
