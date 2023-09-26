@@ -39,7 +39,7 @@ main {
   align-items: center;
 }
 
-.login-card {
+#login-card {
   width: 30rem;
   background-color: #cedebd;
   border-radius: 50px;
