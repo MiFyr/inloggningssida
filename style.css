@@ -58,7 +58,7 @@ input {
   outline: none;
 }
 
-#login-btn {
+button {
   border: 1px solid lightgray;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -68,7 +68,7 @@ input {
   cursor: pointer;
 }
 
-#login-btn:hover {
+button:hover {
   background-color: #9eb384;
 }
 
