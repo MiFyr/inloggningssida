@@ -8,6 +8,8 @@ const passKey = "qwe123";
 const logInButton = document.getElementById("login-btn");
 const mainTag = document.querySelector("main");
 
+let alreadyThere = false;
+
 checkStorage();
 logInButton.addEventListener("click", checkInput);
 
@@ -18,14 +20,22 @@ function checkInput() {
     localStorage.setItem("password", password.value);
     logIn();
   } else {
-    console.log("Fel uppgifter");
+    nope();
+  }
+}
+
+//---FUNCTION--- sends login denied message
+function nope() {
+  if (alreadyThere == false) {
     let errorDiv = document.createElement("p");
     let errorText = document.createTextNode("Felaktiga inloggningsuppgifter");
     errorDiv.appendChild(errorText);
-
     mainTag.insertAdjacentElement("afterbegin", errorDiv);
+    alreadyThere = true;
+  } else {
+    console.log("User entered wrong username/password");
   }
-}
+} //QUESTION FOR THURSDAY: HOW TO REMOVE DENY MESSAGE ON SUCCESSFUL LOGIN???
 
 //---FUNCTION--- display login message
 function logIn() {
