@@ -8,10 +8,14 @@ const passKey = "qwe123";
 const logInButton = document.getElementById("login-btn");
 const mainTag = document.querySelector("main");
 
+checkStorage();
 logInButton.addEventListener("click", checkInput);
 
+//---FUNCTION--- username/password check
 function checkInput() {
   if (username.value == nameKey && password.value == passKey) {
+    localStorage.setItem("username", username.value);
+    localStorage.setItem("password", password.value);
     logIn();
   } else {
     console.log("Fel uppgifter");
@@ -23,15 +27,13 @@ function checkInput() {
   }
 }
 
+//---FUNCTION--- display login message
 function logIn() {
-  localStorage.setItem("username", username.value); //maybe move these to checkInput function?
-  localStorage.setItem("password", password.value);
-
-  //Hide login form:
+  //hide login form:
   let logInCard = document.getElementById("login-card");
   logInCard.style.display = "none";
 
-  //Create "logged in" div:
+  //create "logged in" div:
   let welcomeDiv = document.createElement("div");
   let welcomeH2 = document.createElement("h2");
   let welcomeText = document.createTextNode("Välkommen! Du är inloggad.");
@@ -42,9 +44,20 @@ function logIn() {
   welcomeDiv.appendChild(logOutBtn);
   mainTag.insertAdjacentElement("afterbegin", welcomeDiv);
 
-  //Log out button function:
+  //log out button function:
   logOutBtn.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
   });
+}
+
+//---FUNCTION--- check if user is logged in
+function checkStorage() {
+  let storageName = localStorage.getItem("username");
+  let storagePass = localStorage.getItem("password");
+  if (storageName == nameKey && storagePass == passKey) {
+    logIn();
+  } else {
+    return;
+  }
 }
