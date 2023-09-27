@@ -1,9 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Brukshundsklubben</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <img id="header-img" src="./lake-dog.jpg" alt="Hund tittar ut över sjö" />
+      <h1>Brukshundsklubben</h1>
+      <p>Brukshundsklubben för alla snälla vovar.</p>
+      <hr />
+    </header>
+    <main>
+      <div class="content-card" id="login-card">
+        <h2>Logga in</h2>
+        <label for="username">Användarnamn:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Användarnamn"
+        />
+        <label for="password">Lösenord:</label>
+        <input
+          type="text"
+          id="password"
+          name="password"
+          placeholder="Lösenord"
+        />
+        <button id="login-btn">Logga in</button>
+      </div>
+      <div class="content-card img-card">
+        <img
+          class="small-img"
+          src="https://picsum.photos/id/237/200"
+          alt="Svart hund"
+        />
+        <img
+          class="small-img"
+          src="https://picsum.photos/id/476/200"
+          alt="Skog"
+        />
+        <img
+          class="small-img"
+          src="https://picsum.photos/id/659/200"
+          alt="Hund i sele"
+        />
+      </div>
+      <div class="content-card">
+        <h2>Våra regler</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          quaerat inventore similique, aliquid suscipit doloremque culpa
+          corporis voluptate blanditiis, possimus ipsum placeat quas asperiores
+          provident sint, adipisci eos! Autem officia quasi necessitatibus
+          distinctio maxime, nobis rem! Deserunt ullam excepturi vero ex
+          temporibus laborum similique nulla itaque. Modi quibusdam illo
+          impedit.
+        </p>
+      </div>
+    </main>
+    <footer>
+      <h3>Kontakta oss:</h3>
+      <ul class="footer-list">
+        <li>mejl@brukshundsklubben.email</li>
+        <li>Hundvägen 1, 123 45 Skogen</li>
+      </ul>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
