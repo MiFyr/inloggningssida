@@ -7,7 +7,7 @@ logInButton.addEventListener("click", checkInput);
 
 function checkInput() {
   if (username.value == "Bella" && password.value == "qwe123") {
-    loggedIn();
+    logIn();
   } else {
     console.log("Fel uppgifter");
     let errorDiv = document.createElement("p");
@@ -18,7 +18,7 @@ function checkInput() {
   }
 }
 
-function loggedIn() {
+function logIn() {
   let logInCard = document.getElementById("login-card");
   logInCard.style.display = "none";
 }
