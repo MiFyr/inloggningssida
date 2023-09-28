@@ -7,8 +7,9 @@ const passKey = "qwe123";
 //get other html elements in DOM:
 const logInButton = document.getElementById("login-btn");
 const mainTag = document.querySelector("main");
-
+//variables for loginDenied/logIn functions:
 let alreadyThere = false;
+let errorPara = document.createElement("p");
 
 checkStorage();
 logInButton.addEventListener("click", checkInput);
@@ -20,28 +21,29 @@ function checkInput() {
     localStorage.setItem("password", password.value);
     logIn();
   } else {
-    nope();
+    loginDenied();
   }
 }
 
-//---FUNCTION--- sends login denied message
-function nope() {
+//---FUNCTION--- login denied message
+function loginDenied() {
   if (alreadyThere == false) {
-    let errorDiv = document.createElement("p");
+    //p element already exists (errorPara)
     let errorText = document.createTextNode("Felaktiga inloggningsuppgifter");
-    errorDiv.appendChild(errorText);
-    mainTag.insertAdjacentElement("afterbegin", errorDiv);
+    errorPara.appendChild(errorText);
+    mainTag.insertAdjacentElement("afterbegin", errorPara);
     alreadyThere = true;
   } else {
     console.log("User entered wrong username/password");
   }
-} //QUESTION FOR THURSDAY: HOW TO REMOVE DENY MESSAGE ON SUCCESSFUL LOGIN???
+}
 
 //---FUNCTION--- display login message
 function logIn() {
   //hide login form:
   let logInCard = document.getElementById("login-card");
   logInCard.style.display = "none";
+  errorPara.remove();
 
   //create "logged in" div:
   let welcomeDiv = document.createElement("div");
