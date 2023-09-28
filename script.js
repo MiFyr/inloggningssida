@@ -31,6 +31,7 @@ function loginDenied() {
     //p element already exists (errorPara)
     let errorText = document.createTextNode("Felaktiga inloggningsuppgifter");
     errorPara.appendChild(errorText);
+    errorPara.classList.add("red");
     mainTag.insertAdjacentElement("afterbegin", errorPara);
     alreadyThere = true;
   } else {
